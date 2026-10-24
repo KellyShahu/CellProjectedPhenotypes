@@ -150,18 +150,3 @@ Cells below a user-defined LISI threshold are excluded.
 
 **Output:** Filtered Seurat object.
 
-
-library(miloR)
-library(SingleCellExperiment)
-
-sc <- import("scanpy", convert = FALSE)
-adata <- sc$read_h5ad("data.h5ad")
-
-diffusion_coords <- computeDiffusionCoordinates(
-  adata,
-  pca_key = "X_pca",
-  k = 30,
-  n_components = 12,
-  diffusion_time = 3
-)
-```
